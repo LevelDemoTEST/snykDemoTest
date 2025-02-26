@@ -1,0 +1,12 @@
+name: Example PR Workflow
+on:
+  pull_request:
+    types: [opened, reopened]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check for XXYYZZ
+        run: grep -q XXYYZZ README.md
+
